@@ -1,0 +1,55 @@
+<header class="p-3 bg-dark text-white">
+    <style>
+        /* Animation for MOVIES BLOG color change */
+        @keyframes colorChange {
+            0% {
+                color: #ff0000; /* Red */
+            }
+            25% {
+                color: #00ff00; /* Green */
+            }
+            50% {
+                color: #0000ff; /* Blue */
+            }
+            75% {
+                color: #ff00ff; /* Magenta */
+            }
+            100% {
+                color: #ff0000; /* Red (Loop back) */
+            }
+        }
+
+        header .color-changing-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: colorChange 5s infinite; /* 5s duration, infinite loop */
+        }
+
+        /* Larger font size for navigation links */
+        header .nav-links a {
+            font-size: 1.2rem; /* Adjusted size, can be increased further */
+        }
+    </style>
+
+    <div class="row">
+        <div class="col">
+            <a class="text-light text-decoration-none" href="/">
+                <h3 class="color-changing-title">BLOG</h3>
+            </a>
+        </div>
+        <div class="col">
+            <div class="d-flex justify-content-center gap-3 nav-links">
+                <a class="text-light text-decoration-none" href="/">Home</a>
+                <a class="text-light text-decoration-none" href="/about">About</a>
+                <a class="text-light text-decoration-none" href="/contact">Contact</a>
+                {% if user.is_authenticated %}
+                <a class="text-light text-decoration-none" href="{% url 'blog:dashboard'%}">Dashboard</a>
+                <a class="text-light text-decoration-none" href="{% url 'blog:logout'%}">Logout</a>
+                {% else %}
+                <a class="text-light text-decoration-none" href="{% url 'blog:register' %}">Register</a>
+                <a class="text-light text-decoration-none" href="{% url 'blog:login' %}">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
