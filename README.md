@@ -3,7 +3,7 @@
 A simple and modern blog application built with Django. This project is designed to manage movie reviews, user authentication, categories, and more. It’s fully customizable and ideal for showcasing movie-related content and reviews.
 
 ***Demo***
-Check out the live demo at https://vignesh012.pythonanywhere.com/.
+Check out the live demo at https://vicky0.pythonanywhere.com/
 
 ***Features***
 - **User Authentication:** Register, login, logout, password reset, and account management.
